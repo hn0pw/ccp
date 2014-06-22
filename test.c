@@ -122,110 +122,25 @@ int create_worker(char* command){
 main(int argc, char* argv[]){
     debug("Test client");
         
-    //char command[] ="InsertLines 0 2\nHalloText\nAndererText\n";
-    //char command[] ="READLINES 0 2\n";
-    //debug("Open connection to localhost:3000");
-    
-/*
-    char* commandsToSend[4];
-    
-    char *command_0 = "InsertLines 0 2\nHalloText\nAndererText\n";
-    char *command_1 = "READLINES 0 2";
-    char *command_2 = "InsertLines 0 2\nHalloText\nAndererText\n";
-    char *command_3 = "InsertLines 2 1\nHalloText2\nAndererText2\n";
-    
-    commandsToSend[0] = command_0;
-    commandsToSend[1] = command_1;
-    commandsToSend[2] = command_2;
-    commandsToSend[3] = command_3;
-*/
-    // "INSERTLINES, REPLACELINES, READLINES, DELETELINES, NUMLINES, Quit";
-    //create_worker("InsertLines 0 2\nHalloText\nAndererText\n");
-/*
-    sleep(1);
-    create_worker("READLINES 0 2");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText2\nAndererText2\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText2\nAndererText2\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText2\nAndererText2\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText2\nAndererText2\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText2\nAndererText2\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    sleep(1);
-    create_worker("READLINES 0 2");
-    create_worker("REPLACELINES 0 2\nHalloText3\nAndererText3\n");
-*/
-    
     create_worker("NUMLINES");
-    sleep(1);
-    //create_worker("InsertLines 0 2\nHalloText5\nAndererText5\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    create_worker("REPLACELINES 0 2\nHalloText\nAndererText\n");
-    //sleep(1);
-    //create_worker("READLINES 0 4");
-    //sleep(1);
-    //create_worker("InsertLines 0 2\nnew insert\nnew insert 2\n");
-    //create_worker("DELETELINES 0 5");
-    //sleep(3);
-    //create_worker("READLINES 0 6");
-    sleep(1);
+    sleep(3);
+    create_worker("InsertLines 0 2\nZeile 6\nZeile6\n");
+    create_worker("InsertLines 0 2\nZeile 3\nZeile4\n");
+    create_worker("InsertLines 0 2\nZeile 1\nZeile2\n");
+    sleep(3);
+    create_worker("READLINES 0 6");
+    sleep(3);
+    create_worker("REPLACELINES 0 2\nZeile 1 neu\nZeile 2 neu\n");
+    sleep(3);
+    create_worker("READLINES 0 6");
     create_worker("NUMLINES");
-    
-    //sleep(3);
+    sleep(3);
+    create_worker("DELETELINES 0 5");
+    sleep(3);
+    create_worker("NUMLINES");
+    create_worker("READLINES 0 6");
+    sleep(3);
+    create_worker("READLINES 0 1");
     
     while (running_threads > 0) {
        sleep(1);
