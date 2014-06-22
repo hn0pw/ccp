@@ -222,6 +222,9 @@ int wait_for_command_from_client(int socket) {
                     if (command_num_lines > 0) {
                         command_num_lines--;
                     }
+                    if (strcasecmp(command, "DELETELINES") == 0) { // fix delete lines
+                        command_start_num--;
+                    }
                     if (response == 0) {
                         fprintf(stderr, "  Command processing problem\n");
                         sendAnswerToClient("NOK");
@@ -448,8 +451,9 @@ int commandSwitcher(char *command, int start_line, int num_lines, char *line) {
         }
         return sendAnswerToClient(fileContents[start_line]);
     }
-    if (strcasecmp(command, "DELETELINES") == 0) {    
-        if(start_line >= getTotalLinesInFile()) {
+    if (strcasecmp(command, "DELETELINES") == 0) {
+        int tot = getTotalLinesInFile();
+        if(start_line >= tot) {
             sendAnswerToClient("Line not exist, can't delete\n");
             return 0;
         }
