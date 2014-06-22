@@ -193,7 +193,7 @@ int wait_for_command_from_client(int socket) {
                 break;
             }
             
-            printf(stderr, "  Command is: %s Start Line: %i Num Lines: %i \n", command, command_start_num, command_num_lines);
+            fprintf(stderr, "  Command is: %s Start Line: %i Num Lines: %i \n", command, command_start_num, command_num_lines);
             if (strcasestr(commands_allowed2, command) != NULL) { // search for command case insensitiv if its allowed
                 //debug("  Command allowed\n");
             } else {
@@ -213,7 +213,7 @@ int wait_for_command_from_client(int socket) {
                 }
                 while (command_num_lines > 0) {
                     while(pthread_mutex_trylock(&line_locking_mutex[command_start_num]) != 0) {
-                        printf(stderr, "  Line %i locked, wait..\n", command_start_num);
+                        fprintf(stderr, "  Line %i locked, wait..\n", command_start_num);
                         sleep(1);
                     }
                     int response = commandSwitcher(command, command_start_num, command_num_lines, line);
@@ -223,7 +223,7 @@ int wait_for_command_from_client(int socket) {
                         command_num_lines--;
                     }
                     if (response == 0) {
-                        printf("  Command processing problem\n");
+                        fprintf(stderr, "  Command processing problem\n");
                         sendAnswerToClient("NOK");
                         //break;
                     } else if (response == 1) {
@@ -256,7 +256,7 @@ int wait_for_command_from_client(int socket) {
             }
             
             while(pthread_mutex_trylock(&line_locking_mutex[command_start_num]) != 0) {
-                printf(stderr, "  Line %i locked, wait..\n", command_start_num);
+                fprintf(stderr, "  Line %i locked, wait..\n", command_start_num);
                 sleep(1);
             }
             int response = commandSwitcher(command, command_start_num, command_num_lines, line);
@@ -364,7 +364,7 @@ int deleteLineAndMoveOthers(int lineNumber) {
     }
     
     while(pthread_mutex_trylock(&line_locking_mutex[nextLine]) != 0) {
-        printf(stderr, "  Line %i locked, wait..\n", nextLine);
+        fprintf(stderr, "  Line %i locked, wait..\n", nextLine);
         sleep(1);
     }
     
